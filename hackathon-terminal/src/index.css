@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* ── Theme Variables ── */
+:root {
+  --phosphor: #00ff41;
+  --phosphor-dim: #00aa2b;
+  --phosphor-faint: #004d1a;
+  --alert-red: #ff0000;
+  --alert-red-bright: #ff3333;
+  --warning-amber: #ffcc00;
+  --bg-dark: #000d00;
+  --bg-darker: #001a00;
+  --bg-panel: #000800;
+}
+
+/* ── Global Reset ── */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--phosphor);
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.05em;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'VT323', monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--phosphor-faint); }
+::-webkit-scrollbar-thumb:hover { background: var(--phosphor-dim); }
+
+/* ── CRT Effects ── */
+.crt-scanlines {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.12) 0px,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.crt-vignette {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Glow Utilities ── */
+.phosphor-glow {
+  text-shadow: 0 0 6px var(--phosphor), 0 0 12px rgba(0, 255, 65, 0.3);
+}
+
+.phosphor-glow-bright {
+  text-shadow: 0 0 10px var(--phosphor), 0 0 20px rgba(0, 255, 65, 0.5), 0 0 40px rgba(0, 255, 65, 0.2);
+}
+
+.red-glow {
+  text-shadow: 0 0 6px var(--alert-red), 0 0 12px rgba(255, 0, 0, 0.3);
+}
+
+/* ── Terminal Border ── */
+.terminal-border {
+  border: 1px solid var(--phosphor-faint);
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.05);
+}
+
+.red-accent-bar {
+  border-top: 2px solid var(--alert-red);
+  box-shadow: 0 -2px 8px rgba(255, 0, 0, 0.2);
+}
+
+/* ── Animations ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glitch {
+  0%, 90%, 100% { opacity: 1; transform: none; }
+  92% { opacity: 0.8; transform: translateX(-2px); }
+  94% { opacity: 1; transform: translateX(2px); }
+  96% { opacity: 0.9; transform: none; }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 4px var(--phosphor); }
+  50% { box-shadow: 0 0 12px var(--phosphor), 0 0 24px rgba(0,255,65,0.3); }
+}
+
+.animate-blink { animation: blink 1.06s step-end infinite; }
+.animate-marquee { animation: marquee 30s linear infinite; }
+.animate-fadeInUp { animation: fadeInUp 0.6s ease-out forwards; }
+.animate-glitch { animation: glitch 8s ease-in-out infinite; }
+.animate-pulse-green { animation: pulse-green 2s ease-in-out infinite; }
+
+::selection {
+  background: var(--phosphor);
+  color: var(--bg-dark);
+}
+
+a {
+  color: var(--phosphor);
+  text-decoration: none;
+  transition: text-shadow 0.2s;
+}
+a:hover {
+  text-shadow: 0 0 8px var(--phosphor);
+}
