@@ -11,6 +11,41 @@ A retro military-themed hackathon website that mimics 1980s Unix terminal interf
 
 ---
 
+## Screenshots
+
+![Home — hero](screenshots/02-home-hero.png)
+
+| Boot Sequence | Mobile |
+|---|---|
+| ![Boot sequence](screenshots/01-boot-sequence.png) | ![Mobile home](screenshots/14-mobile-home.png) |
+
+| Mission Tracks | Operation Timeline |
+|---|---|
+| ![Mission tracks](screenshots/04-mission-tracks.png) | ![Operation timeline](screenshots/05-operation-timeline.png) |
+
+| Prize Manifest | Judge Panel |
+|---|---|
+| ![Prize manifest](screenshots/06-prize-manifest.png) | ![Judge panel](screenshots/07-judge-panel.png) |
+
+| FAQ | Registration |
+|---|---|
+| ![FAQ](screenshots/08-faq.png) | ![Registration](screenshots/09-registration.png) |
+
+| LLM Fundamentals | Digital Discipline |
+|---|---|
+| ![LLM education](screenshots/11-llm-education.png) | ![Digital discipline](screenshots/12-digital-discipline.png) |
+
+<details>
+<summary>Full landing page &amp; 404</summary>
+
+![Full home page](screenshots/10-home-full-page.png)
+
+![404 page](screenshots/13-not-found.png)
+
+</details>
+
+---
+
 ## Quick Start
 
 ```bash
